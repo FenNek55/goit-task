@@ -5,3 +5,7 @@
 <script setup>
 import HomeView from './views/HomeView.vue';
 </script>
+
+<style lang="scss">
+@import './assets/styles/main.scss';
+</style>
