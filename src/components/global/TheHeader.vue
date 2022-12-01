@@ -12,6 +12,13 @@
       >
         MoGo
       </a>
+      <button class="header__hamburger">
+        <img
+          class="header__hamburger-icon"
+          src="@/assets/icons/hamburger.svg"
+          alt="Toggle menu"
+        >
+      </button>
       <nav class="header__links">
         <a
           v-for="link in links"
@@ -90,7 +97,7 @@ const links = [
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 26px 0; 
+    padding: 26px 40px; 
     color: $white;
   }
   
@@ -107,8 +114,12 @@ const links = [
   }
 
   &__links {
-    display: flex;
+    display: none;
     align-items: center;
+
+    @media (min-width: $breakpoint-desktop) {
+      display: flex;
+    } 
   }
 
   &__link {
@@ -150,6 +161,19 @@ const links = [
     &:hover::after {
       width: 100%;
     }
+  }
+
+  &__hamburger {
+    background-color: transparent;
+
+    @media (min-width: $breakpoint-desktop) {
+      display: none;
+    } 
+  }
+
+  &__hamburger-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

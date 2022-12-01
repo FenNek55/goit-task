@@ -94,8 +94,17 @@ import michael from '@/assets/images/michael.png';
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 30px;
+    row-gap: 78px;
+
+    @media(min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &__card {

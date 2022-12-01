@@ -30,12 +30,13 @@
   }
 
   &__button {
-    font-size: 15px;
+    font-size: 14px;
     font-family: $font-roboto;
     color: $white;
     padding: 15px 32px;
     background-color: $brand-teal;
     cursor: pointer;
+    font-weight: bold;
 
     &:hover {
       background-color: $brand-teal--dark;

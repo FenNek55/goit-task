@@ -33,16 +33,32 @@
 
   &__subtitle {
     font-family: $font-kaushan;
-    font-size: 76px;
-    margin-bottom: 60px;
+    font-size: calc(76px * 0.3);
+    margin-bottom: 20px;
     color: white;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: calc(76px * 0.6);
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 76px;
+    }
   }
 
   &__title {
-    font-size: 150px;
-    line-height: 140px;
+    font-size: calc(150px * 0.4);
     margin-bottom: 124px;
     color: white;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: calc(150px * 0.8);
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 150px;
+    }
   }
 
   &__cta {
