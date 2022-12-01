@@ -1,5 +1,10 @@
 <template>
-  <header class="header">
+  <header
+    class="header"
+    :class="{
+      'header--sticky': isSticky,
+    }"
+  >
     <div class="container header__container">
       <a
         href="/"
@@ -14,12 +19,36 @@
           :href="link.path"
           class="header__link"
         >{{ link.name }}</a>
+        <a
+          href="/"
+          class="header__link--with-icon"
+        ><SearchIcon class="header__icon" /></a>
+        <a
+          href="/"
+          class="header__link--with-icon"
+        ><CartIcon class="header__icon" /></a>
       </nav>
     </div>
   </header>
 </template>
 
 <script setup>
+import CartIcon from '@/components/icons/CartIcon.vue';
+import SearchIcon from '@/components/icons/SearchIcon.vue';
+import { onMounted, ref } from 'vue';
+
+const isSticky = ref(false);
+
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      isSticky.value = true;
+    } else {
+      isSticky.value = false;
+    }
+  });
+})
+
 const links = [
   {
     name: 'About',
@@ -46,10 +75,16 @@ const links = [
 
 <style lang="scss" scoped>
 .header {
-  position: absolute;
+  z-index: 100;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  transition: background-color 0.2s;
+
+  &--sticky {
+    background-color: $brand-pink;
+  }
 
   &__container {
     display: flex;
@@ -73,10 +108,11 @@ const links = [
 
   &__links {
     display: flex;
-    column-gap: 56px;
+    align-items: center;
   }
 
   &__link {
+    margin-right: 56px;
     position: relative;
     font-size: 14px;
     font-weight: 400;
@@ -87,6 +123,12 @@ const links = [
 
     &--active {
       color: $brand-yellow;
+    }
+
+    &--with-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 42px;
     }
 
     &:hover {

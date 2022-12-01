@@ -23,7 +23,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: white;
+  line-height: 1em;
 
   &__content {
     margin: 0 auto;
@@ -35,12 +35,14 @@
     font-family: $font-kaushan;
     font-size: 76px;
     margin-bottom: 60px;
+    color: white;
   }
 
   &__title {
     font-size: 150px;
     line-height: 140px;
     margin-bottom: 124px;
+    color: white;
   }
 
   &__cta {
