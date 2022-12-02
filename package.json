@@ -18,5 +18,6 @@
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "vite": "^3.2.4"
-  }
+  },
+  "homepage": "https://fennek55.github.io/goit-task/"
 }
