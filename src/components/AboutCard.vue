@@ -126,6 +126,20 @@ defineProps({
   padding-top: 123.6842%;
   background-color: $brand-teal;
 
+  &:focus-within {
+    .about-card__portrait {
+      transform: translateX(-10px) translateY(-10px);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+    .about-card__social-link {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   &:hover {
     .about-card__portrait {
       transform: translateX(-10px) translateY(-10px);
