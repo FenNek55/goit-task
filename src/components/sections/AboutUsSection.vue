@@ -16,6 +16,7 @@
         <AboutCard
           class="about__card"
           :img-src="matthew"
+          :img-src-retina="matthew2x"
         />
         <h5 class="about__name">
           Matthew Dix
@@ -28,6 +29,7 @@
         <AboutCard
           class="about__card"
           :img-src="christopher"
+          :img-src-retina="christopher2x"
         />
         <h5 class="about__name">
           Christopher Campbell
@@ -40,6 +42,7 @@
         <AboutCard
           class="about__card"
           :img-src="michael"
+          :img-src-retina="michael2x"
         />
         <h5 class="about__name">
           Michael Fertig
@@ -55,8 +58,11 @@
 <script setup>
 import AboutCard from '@/components/AboutCard.vue';
 import matthew from '@/assets/images/matthew.png';
+import matthew2x from '@/assets/images/matthew@2x.png';
 import christopher from '@/assets/images/christopher.png';
+import christopher2x from '@/assets/images/christopher@2x.png';
 import michael from '@/assets/images/michael.png';
+import michael2x from '@/assets/images/michael@2x.png';
 </script>
 
 <style lang="scss" scoped>
