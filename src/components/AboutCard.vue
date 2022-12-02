@@ -1,18 +1,12 @@
 <template>
   <div class="about-card">
-    <div
+    <img
+      :src="imgSrc"
+      :srcset="`${imgSrc} 1x, ${imgSrcRetina} 2x`"
+      alt="Card image"
       class="about-card__portrait"
-      :style="`background-image: url(${imgSrc});
-                @media
-                only screen and (-webkit-min-device-pixel-ratio: 2),
-                only screen and (   min--moz-device-pixel-ratio: 2),
-                only screen and (     -o-min-device-pixel-ratio: 2/1),
-                only screen and (        min-device-pixel-ratio: 2),
-                only screen and (                min-resolution: 192dpi),
-                only screen and (                min-resolution: 2dppx) { 
-                  background-image: url(${imgSrcRetina});
-                }`"
     >
+    <div class="about-card__overlay">
       <div class="about-card__socials">
         <a
           href="/"
@@ -140,10 +134,11 @@ defineProps({
   &:focus-within {
     .about-card__portrait {
       transform: translateX(-10px) translateY(-10px);
+    }
 
-      &::after {
-        opacity: 1;
-      }
+    .about-card__overlay {
+      opacity: 1;
+      transform: translateX(-10px) translateY(-10px);
     }
     .about-card__social-link {
       transform: translateY(0);
@@ -154,10 +149,11 @@ defineProps({
   &:hover {
     .about-card__portrait {
       transform: translateX(-10px) translateY(-10px);
+    }
 
-      &::after {
-        opacity: 1;
-      }
+    .about-card__overlay {
+      opacity: 1;
+      transform: translateX(-10px) translateY(-10px);
     }
     .about-card__social-link {
       transform: translateY(0);
@@ -166,30 +162,12 @@ defineProps({
   }
 
   &__portrait {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     transition: transform 0.6s;
-
-    &:after {
-      transition: opacity 0.6s;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to bottom, #{$brand-pink}E6, #{$brand-yellow}E6);
-      opacity: 0;
-    }
   }
 
   &__socials {
@@ -254,6 +232,21 @@ defineProps({
     &:hover {
       background-color: $brand-pink;
     }
+  }
+
+  &__overlay {
+    background-image: linear-gradient(to bottom, #{$brand-pink}E6, #{$brand-yellow}E6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
   }
 }
 </style>
