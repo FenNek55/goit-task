@@ -33,17 +33,17 @@
 
   &__subtitle {
     font-family: $font-kaushan;
-    font-size: calc(76px * 0.3);
+    font-size: calc(72px * 0.3);
     margin-bottom: 20px;
     color: white;
 
     @media (min-width: $breakpoint-tablet) {
-      font-size: calc(76px * 0.6);
+      font-size: calc(72px * 0.6);
       margin-bottom: 60px;
     }
 
     @media (min-width: $breakpoint-desktop) {
-      font-size: 76px;
+      font-size: 72px;
     }
   }
 
@@ -53,11 +53,13 @@
     color: white;
 
     @media (min-width: $breakpoint-tablet) {
-      font-size: calc(150px * 0.8);
+      font-size: calc(150px * 0.75);
+      line-height: calc(140px * 0.75);
     }
 
     @media (min-width: $breakpoint-desktop) {
       font-size: 150px;
+      line-height: 140px;;
     }
   }
 
