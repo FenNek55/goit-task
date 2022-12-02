@@ -35,6 +35,8 @@
               xmlns="http://www.w3.org/2000/svg"
               xml:space="preserve"
               viewBox="0 0 248 204"
+              width="1298"
+              height="2500"
             >
               <path
                 fill="#fff"
@@ -51,14 +53,9 @@
             <svg
               class="about-card__social-icon"
               version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
+              width="1298"
+              height="2500"
               viewBox="0 0 144 144"
-              enable-background="new 0 0 144 144"
-              xml:space="preserve"
             >
               <g>
                 <g>
@@ -86,9 +83,8 @@
               class="about-card__social-icon"
               version="1.1"
               viewBox="0 0 512 512"
-              xml:space="preserve"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1298"
+              height="2500"
             ><g id="Edges" /><g id="Symbol"><g><path
               fill="#fff"
               class="st0"
