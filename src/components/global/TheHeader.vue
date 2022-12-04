@@ -24,7 +24,9 @@
           v-for="link in links"
           :key="link.name"
           :href="link.path"
-          class="header__link"
+          :class="['header__link', {
+            'header__link--active': link.isActive,
+          }]"
         >{{ link.name }}</a>
         <a
           href="/"
@@ -58,6 +60,7 @@ onMounted(() => {
 
 const links = [
   {
+    isActive: true,
     name: 'About',
     path: '/',
   },
